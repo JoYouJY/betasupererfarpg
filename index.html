@@ -78,32 +78,73 @@
             background-color: #0056b3;
         }
     </style>
-  <button id="walletButton" onclick="ConnectWallet()">Connect Wallet</button>
+  <button id="walletButton" style="background-color: rgb(247, 29, 109); font-size: 30px;"  onclick="ConnectWallet()">Connect Wallet</button>
   <button id="disconnectButton" onclick="DisconnectWallet()" style="display: none;">Disconnect Wallet</button>
   <div>REMEMBER TO CONNECT FIRST</div>
+  <div>==========================================</div>
+  <div>------        LINGS RELATED     -------</div>
   <div class="input-group">
-    <button id="getBetapetButton">get BETA pets</button>
-    <input type="text" id="betapetaddress" placeholder="address">
+    <button id="getBetapetButton">get BETA LINGS</button>
+    <input type="text" id="betapetaddress" placeholder="address:relayered or personal">
 
   </div>
   
   <div class="input-group">
-    <button id="RemoveAllBetapetButton">Remove All Betapet</button>    
-    <input type="text" id="removeallpetaddress" placeholder="address">
+    <button id="RemoveAllBetapetButton">Remove All Lings (30Slots)</button>    
+    <input type="text" id="removeallpetaddress" placeholder="address:relayered or personal">
   </div>
-  
+  <div>------     -----   -------</div>
+
+  <div class="input-group">
+    <button id="GiveChosenPetsOnSlot_">Give a Lings on Slot</button>    
+    <input type="text" id="GiveChosenPetsOnSlot_address" placeholder="address:relayered or personal">
+    <input type="text" id="GiveChosenPetsOnSlot_slot" placeholder="uint:which slot">
+    <input type="text" id="GiveChosenPetsOnSlot_LingsID" placeholder="uint:Lings ID">
+  </div>
+  <div class="input-group">
+    <button id="removeChosenPetOnSlot_">REMOVE a Lings on Slot</button>    
+    <input type="text" id="removeChosenPetOnSlot_address" placeholder="address:relayered or personal">
+    <input type="text" id="removeChosenPetOnSlot_slot" placeholder="uint:which slot">
+  </div>
+  <div>------        Quest RELATED     -------</div>
   <div class="input-group">
     <button id="resetallquest">Reset All Quest</button>
-    <input type="text" id="resetallquestaddress" placeholder="address">
+    <input type="text" id="resetallquestaddress" placeholder="address:relayered or personal">
   </div>
   <div class="input-group">
     <button id="setaquest">Set ? Quest number</button>
-    <input type="text" id="setaquestaddress" placeholder="address">
+    <input type="text" id="setaquestaddress" placeholder="address:relayered or personal">
     <input type="text" id="whichquest" placeholder="?th quest number uint256">
     <input type="text" id="whatnumber" placeholder="number/progress uint8">
   </div>
-  
-  <textarea id="feedbackBox" rows="4" cols="50" readonly></textarea>
+  <div>------        UID Account RELATED     -------</div>
+  <div class="input-group">
+    <button id="setUID_">Set UID of an Address</button>    
+    <input type="text" id="setUID_address" placeholder="address:relayered or personal">
+    <input type="text" id="setUID_UID" placeholder="uint:new UID, can be 0 = reset">
+  </div>
+  <div class="input-group">
+    <button id="setPersonalWallet_">Set Relayered wallet control Personal Wallet</button>    
+    <input type="text" id="setPersonalWallet_Relayeraddress" placeholder="address:relayered">
+    <input type="text" id="setPersonalWallet_Personaladdress" placeholder="uaddress:personal (being controlled)">
+  </div>
+  <div>------        Trainer     -------</div>
+  <div class="input-group">
+    <button id="setTrainerGENE_">Set a Trainer GeneStrength</button>
+    <input type="text" id="setTrainerGENE_address" placeholder="address: relayer or personal">
+    <input type="text" id="setTrainerGENE_trainerID"  placeholder="uint:trainer ID: 0:Jojo,1:Michael,2:Klue,3:Emo,4:QY,5:Lena ">
+    <input type="text" id="setTrainerGENE_genestrength" placeholder="uint: genestrength">
+  </div>
+  <div>_____________________________________________ID: 0:Jojo, 1:Michael, 2:Klue, 3:Emo, 4:QY, 5:Lena</div>
+
+<div>.</div>
+
+  <div>Report status:</div>
+  <textarea id="feedbackBox" style="background-color: rgba(190, 181, 184, 0.874);" rows="6" cols="50" readonly></textarea>
+  <div>------     -----   -------</div>
+  <div>Persnonal notes (writeable, use to remember addresses):</div>
+  <textarea id="nothingnouse" rows="6" cols="50" ></textarea>
+
 
     <script  src="./index.js"></script> 
 </body>

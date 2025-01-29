@@ -148,100 +148,58 @@ async function ConnectWallet(){
 
 const contractABI = [
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			}
+		],
+		"name": "GiveAllBetaPets",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			}
+		],
+		"name": "GiveAllBetaShinningPets",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "slot",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "GiveChosenPetsOnSlot",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "BattleRythm",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "bit",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "bool",
-				"name": "Won",
-				"type": "bool"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "randret",
-				"type": "uint256"
-			},
-			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "hp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "attack",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "defense",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "speed",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "intelligence",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "genestrength",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "range",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "special",
-						"type": "uint256"
-					}
-				],
-				"indexed": false,
-				"internalType": "struct S.Unit[6]",
-				"name": "unitgroup",
-				"type": "tuple[6]"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256[3]",
-				"name": "oponentid",
-				"type": "uint256[3]"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256[3]",
-				"name": "attackerid",
-				"type": "uint256[3]"
-			}
-		],
-		"name": "BattleResultV2",
-		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -280,6 +238,146 @@ const contractABI = [
 		],
 		"name": "PlayerRegistered",
 		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "Q1_1JojoTranscended_cheat",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			}
+		],
+		"name": "removeAllBetaPets",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "slot",
+				"type": "uint256"
+			}
+		],
+		"name": "removeChosenPetOnSlot",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			}
+		],
+		"name": "resetAllQuests",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "quest",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint8",
+				"name": "number",
+				"type": "uint8"
+			}
+		],
+		"name": "setMainQuest",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "Relayered",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "PersonalWallet",
+				"type": "address"
+			}
+		],
+		"name": "setPersonalWalletAddressToControl",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "trainerID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "trainerGeneStrength",
+				"type": "uint256"
+			}
+		],
+		"name": "setTrainerGENE",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "Address",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "UID",
+				"type": "uint256"
+			}
+		],
+		"name": "setUIDmain",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"anonymous": false,
@@ -383,385 +481,6 @@ const contractABI = [
 		"type": "event"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "playerAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "string",
-				"name": "oldUsername",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"internalType": "string",
-				"name": "newUsername",
-				"type": "string"
-			}
-		],
-		"name": "UsernameChanged",
-		"type": "event"
-	},
-	{
-		"inputs": [],
-		"name": "Battle",
-		"outputs": [
-			{
-				"internalType": "contract BattleV4",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "recipient",
-				"type": "address"
-			}
-		],
-		"name": "GiveAllBetaPets",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "recipient",
-				"type": "address"
-			}
-		],
-		"name": "GiveAllBetaShinningPets",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "recipient",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "slot",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			}
-		],
-		"name": "GiveChosenPetsOnSlot",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "accountAddressToProceed",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256[6]",
-				"name": "slots",
-				"type": "uint256[6]"
-			}
-		],
-		"name": "battleSimulation",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_newUsername",
-				"type": "string"
-			}
-		],
-		"name": "changeUsername",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "contractRAM",
-		"outputs": [
-			{
-				"internalType": "contract FARPG_RAMInterface",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "contractStorage",
-		"outputs": [
-			{
-				"internalType": "contract FARPG_StorageInterface",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_username",
-				"type": "string"
-			}
-		],
-		"name": "getAddressFromUsername",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "getUsernameFromAddress",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "slot",
-				"type": "uint256"
-			}
-		],
-		"name": "petTiming",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "bond",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "stamina",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "endurance",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "petunitsMAX",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "hp",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "attack",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "defense",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "speed",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "intelligence",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "genestrength",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "range",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "special",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_username",
-				"type": "string"
-			}
-		],
-		"name": "registerPlayer",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "playerAddress",
-				"type": "address"
-			}
-		],
-		"name": "removeAllBetaPets",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "playerAddress",
-				"type": "address"
-			}
-		],
-		"name": "resetAllQuests",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "playerAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "quest",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint8",
-				"name": "number",
-				"type": "uint8"
-			}
-		],
-		"name": "setMainQuest",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "number_expansionrequest",
-				"type": "uint256"
-			}
-		],
-		"name": "slotLimit_expansionCost",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "slotLimit",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "expansionCost",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -778,11 +497,16 @@ const contractABI = [
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_newContractAAddress",
+				"name": "from_address",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to_address",
 				"type": "address"
 			}
 		],
-		"name": "updateBattleV4Address",
+		"name": "transferUID",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -814,10 +538,105 @@ const contractABI = [
 		"type": "function"
 	},
 	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "oldUsername",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "newUsername",
+				"type": "string"
+			}
+		],
+		"name": "UsernameChanged",
+		"type": "event"
+	},
+	{
 		"inputs": [],
 		"name": "withdraw",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "accountAddressToProceed",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "contractRAM",
+		"outputs": [
+			{
+				"internalType": "contract FARPG_RAMInterface",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "contractStorage",
+		"outputs": [
+			{
+				"internalType": "contract IFARPG_Storage",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "showMyUIDnow",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "Address",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "UID",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]
@@ -1044,3 +863,266 @@ async function setaquestfunc(inputAddress,quest,number) {
     feedbackBox.value = 'Error sending transaction: ' + error.message;
   }
 }
+
+
+/*******************************************************************/
+document.getElementById('GiveChosenPetsOnSlot_').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const inputAddress = document.getElementById('GiveChosenPetsOnSlot_address').value;
+	const slot= document.getElementById('GiveChosenPetsOnSlot_slot').value;
+	const lingsid= document.getElementById('GiveChosenPetsOnSlot_LingsID').value;
+	if (!inputAddress) {
+	  alert('Please enter a valid address!');
+	  return;
+	}
+	if (!slot) {
+	  alert('Please enter a valid quest number, like 1st quest = 1!');
+	  return;
+	}
+	if (!lingsid) {
+	  alert('Please enter a valid number! like progress, start with 0');
+	  return;
+	}
+  
+	// Call the function to send the transaction
+	await GiveChosenPetsOnSlotfunc(inputAddress,slot,lingsid);
+  });
+  
+  // Function to send the transaction
+  async function GiveChosenPetsOnSlotfunc(inputAddress,slot,lingsid) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	try {
+	  // Check if the address is valid using ethers.js
+	  if (!ethers.isAddress(inputAddress)) {
+		alert('Invalid address!');
+		return;
+	  }
+	  feedbackBox.value = 'Sending transaction...';
+	 
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddress, contractABI, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.GiveChosenPetsOnSlot(inputAddress,slot,lingsid);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+  }
+
+  /*******************************************************************/
+document.getElementById('removeChosenPetOnSlot_').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const inputAddress = document.getElementById('removeChosenPetOnSlot_address').value;
+	const slot= document.getElementById('removeChosenPetOnSlot_slot').value;
+	if (!inputAddress) {
+	  alert('Please enter a valid address!');
+	  return;
+	}
+	if (!slot) {
+	  alert('Please enter a valid quest number, like 1st quest = 1!');
+	  return;
+	}
+	
+  
+	// Call the function to send the transaction
+	await removeChosenPetOnSlot_func(inputAddress,slot);
+  });
+  
+  // Function to send the transaction
+  async function removeChosenPetOnSlot_func(inputAddress,slot) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	try {
+	  // Check if the address is valid using ethers.js
+	  if (!ethers.isAddress(inputAddress)) {
+		alert('Invalid address!');
+		return;
+	  }
+	  feedbackBox.value = 'Sending transaction...';
+	 
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddress, contractABI, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.removeChosenPetOnSlot(inputAddress,slot);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+  }
+
+   /*******************************************************************/
+document.getElementById('setUID_').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const inputAddress = document.getElementById('setUID_address').value;
+	const UIDinput= document.getElementById('setUID_UID').value;
+	if (!inputAddress) {
+	  alert('Please enter a valid address!');
+	  return;
+	}
+	if (!UIDinput) {
+	  alert('Please enter a valid quest number, like 1st quest = 1!');
+	  return;
+	}
+	
+  
+	// Call the function to send the transaction
+	await setUID_func(inputAddress,UIDinput);
+  });
+  
+  // Function to send the transaction
+  async function setUID_func(inputAddress,UIDinput) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	try {
+	  // Check if the address is valid using ethers.js
+	  if (!ethers.isAddress(inputAddress)) {
+		alert('Invalid address!');
+		return;
+	  }
+	  feedbackBox.value = 'Sending transaction...';
+	 
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddress, contractABI, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.setUIDmain(inputAddress,UIDinput);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+  }
+   /*******************************************************************/
+  document.getElementById('setPersonalWallet_').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const Relayeraddress = document.getElementById('setPersonalWallet_Relayeraddress').value;
+	const Personaladdress= document.getElementById('setPersonalWallet_Personaladdress').value;
+	if (!Relayeraddress) {
+	  alert('Please enter a valid address!');
+	  return;
+	}
+	if (!Personaladdress) {
+	  alert('Please enter a valid quest number, like 1st quest = 1!');
+	  return;
+	}
+	
+  
+	// Call the function to send the transaction
+	await setPersonalWallet_func(Relayeraddress,Personaladdress);
+  });
+  
+  // Function to send the transaction
+  async function setPersonalWallet_func(Relayeraddress,Personaladdress) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	try {
+	  // Check if the address is valid using ethers.js
+	  if (!ethers.isAddress(Relayeraddress)) {
+		alert('Invalid address!');
+		return;
+	  }
+	  feedbackBox.value = 'Sending transaction...';
+	 
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddress, contractABI, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.setPersonalWalletAddressToControl(Relayeraddress,Personaladdress);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+  }
+
+    /*******************************************************************/ 
+document.getElementById('setTrainerGENE_').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const inputAddress = document.getElementById('setTrainerGENE_address').value;
+	const trainerid= document.getElementById('setTrainerGENE_trainerID').value;
+	const genestrength= document.getElementById('setTrainerGENE_genestrength').value;
+	if (!inputAddress) {
+	  alert('Please enter a valid address!');
+	  return;
+	}
+	if (!trainerid) {
+	  alert('Please enter a valid quest number, like 1st quest = 1!');
+	  return;
+	}
+	if (!genestrength) {
+	  alert('Please enter a valid number! like progress, start with 0');
+	  return;
+	}
+  
+	// Call the function to send the transaction
+	await setTrainerGENE_func(inputAddress,trainerid,genestrength);
+  });
+  
+  // Function to send the transaction
+  async function setTrainerGENE_func(inputAddress,trainerid,genestrength) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	try {
+	  // Check if the address is valid using ethers.js
+	  if (!ethers.isAddress(inputAddress)) {
+		alert('Invalid address!');
+		return;
+	  }
+	  feedbackBox.value = 'Sending transaction...';
+	 
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddress, contractABI, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.setTrainerGENE(inputAddress,trainerid,genestrength);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+  }
