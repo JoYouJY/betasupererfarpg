@@ -822,7 +822,7 @@ const contractABI = [
 	}
 ]
 
-const contractAddress = "0xb45ee2a458ADee72eC6E04B7C8607eC5F0f9320E"; 
+const contractAddress = "0x50de6cbea6C9081273A539E75FF6648a19F2eD00"; 
 
 //**********IMPORTANT************** */
 //**********IMPORTANT************** */
