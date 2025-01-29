@@ -16,7 +16,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow: auto; /* Allows scrolling when needed */
         }
         #unity-container {
             width: 100%;
@@ -28,7 +28,7 @@
             height: 100%;
             border: none;
             display: block;
-            overflow: hidden;  /* Hide scrollbars */
+            /*overflow: hidden;  /* Hide scrollbars */
         }
         /* Hide scrollbar for Chrome, Safari and Opera */
         #unity-iframe::-webkit-scrollbar {
@@ -78,14 +78,16 @@
             background-color: #0056b3;
         }
     </style>
-  <button id="walletButton" style="background-color: rgb(247, 29, 109); font-size: 30px;"  onclick="ConnectWallet()">Connect Wallet</button>
-  <button id="disconnectButton" onclick="DisconnectWallet()" style="display: none;">Disconnect Wallet</button>
-  <div>REMEMBER TO CONNECT FIRST</div>
-  <div>==========================================</div>
+
   <div>------        LINGS RELATED     -------</div>
   <div class="input-group">
-    <button id="getBetapetButton">get BETA LINGS</button>
+    <button id="getBetapetButton">give BETA LINGS</button>
     <input type="text" id="betapetaddress" placeholder="address:relayered or personal">
+
+  </div>
+  <div class="input-group">
+    <button id="getBetashinningling">give BETA Shinning LINGS</button>
+    <input type="text" id="getBetashinningling_address" placeholder="address:relayered or personal">
 
   </div>
   
@@ -138,12 +140,56 @@
   <div>_____________________________________________ID: 0:Jojo, 1:Michael, 2:Klue, 3:Emo, 4:QY, 5:Lena</div>
 
 <div>.</div>
+<button id="walletButton" style="background-color: rgb(247, 29, 109); font-size: 30px;"  onclick="ConnectWallet()">Connect Wallet</button>
+<button id="disconnectButton" onclick="DisconnectWallet()" style="display: none;">Disconnect Wallet</button>
+<div>REMEMBER TO CONNECT FIRST</div>
+<div>==========================================</div>
 
   <div>Report status:</div>
   <textarea id="feedbackBox" style="background-color: rgba(190, 181, 184, 0.874);" rows="6" cols="50" readonly></textarea>
   <div>------     -----   -------</div>
   <div>Persnonal notes (writeable, use to remember addresses):</div>
-  <textarea id="nothingnouse" rows="6" cols="50" ></textarea>
+  <textarea id="nothingnouse" rows="2" cols="50" ></textarea>
+  <div>------     -----   -------</div>
+  <div>------        ITEM NFTs     -------</div>
+
+  <div class="input-group">
+    <button id="giveALLoutfit_">give all OUTFIT</button>
+    <input type="text" id="giveALLoutfit_address" placeholder="address:relayered or personal">
+  </div>
+
+  <div class="input-group">
+    <button id="giveALLheadgear_">give all Headgears</button>
+    <input type="text" id="giveALLheadgear_address" placeholder="address:relayered or personal">
+  </div>
+
+  <div class="input-group">
+    <button id="giveALLaerobot_">give all AEROBOTS</button>
+    <input type="text" id="giveALLaerobot_address" placeholder="address:relayered or personal">
+  </div>
+  <div>------     -----   -------</div>
+  <div class="input-group">
+    <button id="giveONEitem_">give One item</button>
+    <input type="text" id="giveONEitem_address" placeholder="address:relayered or personal">
+    <input type="text" id="giveONEitem_uint" placeholder="uint:Item NFT ID">
+  </div>
+  <div class="input-group">
+    <button id="removeONEitem_">Remove One item</button>
+    <input type="text" id="removeONEitem_address" placeholder="address:relayered or personal">
+    <input type="text" id="removeONEitem_uint" placeholder="uint:Item NFT ID">
+  </div>
+  <div>------     -----   -------</div>
+  <div class="input-group">
+    <button id="setPoint1Credit_">set Point1 / Credit</button>
+    <input type="text" id="setPoint1Credit_address" placeholder="address:relayered or personal">
+    <input type="text" id="setPoint1Credit_uint" placeholder="uint: point1/credit">
+  </div>
+
+  <div class="input-group">
+    <button id="setPoint2Genemap_">set Point2 / geneMap</button>
+    <input type="text" id="setPoint2Genemap_address" placeholder="address:relayered or personal">
+    <input type="text" id="setPoint2Genemap_uint" placeholder="uint: Point2 / geneMap">
+  </div>
 
 
     <script  src="./index.js"></script> 
