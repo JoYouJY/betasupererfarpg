@@ -2011,3 +2011,505 @@ const contractAddressITEM = "0x7f295B288124E40C9CF39C332156213acc9a3C8b";
 	  feedbackBox.value = 'Error sending transaction: ' + error.message;
 	}
   }
+
+
+  
+
+//===================================================================================
+  //==================  GIVE ITEM NFT CONTRACT! ======================
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+const contractABIEVENT = [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "BattleRythm",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "bit",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "Won",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "randret",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "hp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "attack",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "defense",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "speed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "intelligence",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "genestrength",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "range",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "special",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct S.Unit[6]",
+				"name": "unitgroup",
+				"type": "tuple[6]"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256[3]",
+				"name": "oponentid",
+				"type": "uint256[3]"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256[3]",
+				"name": "attackerid",
+				"type": "uint256[3]"
+			}
+		],
+		"name": "BattleResultV2",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "hp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "attack",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "defense",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "speed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "intelligence",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "genestrength",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "range",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "special",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct S.Unit",
+				"name": "AfterUnit",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "family",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stage",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct S.Status",
+				"name": "AfterStatus",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "bond",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stamina",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "hunger",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct S.Time",
+				"name": "AfterTime",
+				"type": "tuple"
+			}
+		],
+		"name": "StatChangedResult",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "EventItemsNFT",
+		"outputs": [
+			{
+				"internalType": "contract EventItems_ERC1155Interface",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "accountAddressToProceed",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "contractStorage",
+		"outputs": [
+			{
+				"internalType": "contract IFARPG_Storage",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			}
+		],
+		"name": "giveALLeventsITEM",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "removeONEitem",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_newContractAAddress",
+				"type": "address"
+			}
+		],
+		"name": "updateEventNFTAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
+
+const contractAddressEVENT = "0x34e577214E1Fb186e12344C2Fdba79D8AB2d39c0"; 
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+
+
+
+
+ /*******************************************************************/ 
+ document.getElementById('removeONEEventitem_').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const inputAddress = document.getElementById('removeONEEventitem_address').value;
+	const itemid = document.getElementById('removeONEEventitem_uint').value;
+	if (!inputAddress) {
+	  alert('Please enter a valid address!');
+	  return;
+	}
+	if (!itemid) {
+		alert('Please enter a valid address!');
+		return;
+	  }
+	
+  
+	// Call the function to send the transaction
+	await removeONEitemEVENT_func(inputAddress,itemid);
+  });
+  
+  // Function to send the transaction
+  async function removeONEitemEVENT_func(inputAddress,itemid) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	try {
+	  // Check if the address is valid using ethers.js
+	  if (!ethers.isAddress(inputAddress)) {
+		alert('Invalid address!');
+		return;
+	  }
+	  feedbackBox.value = 'Sending transaction...';
+	 
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressEVENT, contractABIEVENT, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.removeONEitem(inputAddress,itemid);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+  }
+
+  /*******************************************************************/ 
+  document.getElementById('giveALLEventItems_').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const inputAddress = document.getElementById('giveALLEventItems_address').value;
+	if (!inputAddress) {
+	  alert('Please enter a valid address!');
+	  return;
+	}
+	
+  console.log("debug1");
+	// Call the function to send the transaction
+	await giveALLeventsITEM_func(inputAddress,);
+  });
+  
+  // Function to send the transaction
+  async function giveALLeventsITEM_func(inputAddress) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  // Check if the address is valid using ethers.js
+	  if (!ethers.isAddress(inputAddress)) {
+		alert('Invalid address!');
+		return;
+	  }
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressEVENT, contractABIEVENT, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.giveALLeventsITEM(inputAddress);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+  }
