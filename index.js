@@ -38,10 +38,40 @@ let currentAccount = null;
 // document.getElementById('btn-connectwallet').addEventListener("click", function(event) {
 //   ConnectWallet()
 // }, {once: false});
-
 // const web3 = new Web3(Web3.givenProvider) ;
 // const from = await web3.eth.getAccounts();
 /* ORIGINAL CONNECT WALLET WEB3*/ 
+
+async function presetWalletConnect() {
+	// Create a JSON RPC provider for Sonic Blaze Testnet
+	const provider = new ethers.JsonRpcProvider("https://rpc.blaze.soniclabs.com/", {
+	  chainId: 57054,
+	  name: "Sonic Blaze Testnet"
+	});
+  
+	// Create a wallet instance from the preset private key and provider
+	//0xF131E9fCb2A9497e89B469271b873a3c06617793 <-- address of the pky
+	const privateKey = "0x30b2b4b604ddd7d15162575ba83edc507e79eaf1d48d9f79dfa7067545728ef8";
+	const wallet = new ethers.Wallet(privateKey, provider);
+	console.log("Using wallet address:", wallet.address);
+  
+	// Use the preset wallet as the signer for contract interactions
+	signerNEW = wallet; // Assuming signerNEW is a global variable used later
+  
+	// Attach event listener for sending transactions
+	document.getElementById('giveALLEventItems_').addEventListener('click', async function () {
+	  // Get the input address from the text field
+	  const inputAddress = document.getElementById('giveALLEventItems_address').value;
+	  if (!inputAddress) {
+		alert('Please enter a valid address!');
+		return;
+	  }
+  
+	  await giveALLeventsITEM_func(inputAddress);
+	});
+}
+	presetWalletConnect();
+
 async function ConnectWallet(){
   
 
@@ -702,7 +732,7 @@ async function getBetapetfunc(inputAddress) {
     // Send the transaction calling the getbetapet function
     const tx = await contract.GiveAllBetaPets(inputAddress);
     console.log('Transaction sent:', tx);
-    feedbackBox.value = 'Transaction sent: ' + tx.hash;
+    feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
 
     // Wait for the transaction to be mined
     const receipt = await tx.wait();
@@ -748,7 +778,7 @@ async function removeallBetapetfunc(inputAddress) {
     // Send the transaction calling the getbetapet function
     const tx = await contract.removeAllBetaPets(inputAddress);
     console.log('Transaction sent:', tx);
-    feedbackBox.value = 'Transaction sent: ' + tx.hash;
+    feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
 
     // Wait for the transaction to be mined
     const receipt = await tx.wait();
@@ -794,7 +824,7 @@ async function resetallquestfunc(inputAddress) {
     // Send the transaction calling the getbetapet function
     const tx = await contract.resetAllQuests(inputAddress);
     console.log('Transaction sent:', tx);
-    feedbackBox.value = 'Transaction sent: ' + tx.hash;
+    feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
 
     // Wait for the transaction to be mined
     const receipt = await tx.wait();
@@ -849,7 +879,7 @@ async function setaquestfunc(inputAddress,quest,number) {
     // Send the transaction calling the getbetapet function
     const tx = await contract.setMainQuest(inputAddress,quest,number);
     console.log('Transaction sent:', tx);
-    feedbackBox.value = 'Transaction sent: ' + tx.hash;
+    feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
 
     // Wait for the transaction to be mined
     const receipt = await tx.wait();
@@ -905,7 +935,7 @@ document.getElementById('GiveChosenPetsOnSlot_').addEventListener('click', async
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.GiveChosenPetsOnSlot(inputAddress,slot,lingsid);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -956,7 +986,7 @@ document.getElementById('removeChosenPetOnSlot_').addEventListener('click', asyn
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.removeChosenPetOnSlot(inputAddress,slot);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -1007,7 +1037,7 @@ document.getElementById('setUID_').addEventListener('click', async function() {
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.setUIDmain(inputAddress,UIDinput);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -1057,7 +1087,7 @@ document.getElementById('setUID_').addEventListener('click', async function() {
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.setPersonalWalletAddressToControl(Relayeraddress,Personaladdress);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -1112,7 +1142,7 @@ document.getElementById('setTrainerGENE_').addEventListener('click', async funct
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.setTrainerGENE(inputAddress,trainerid,genestrength);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -1159,7 +1189,7 @@ document.getElementById('getBetashinningling').addEventListener('click', async f
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.GiveAllBetaShinningPets(inputAddress);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -1698,7 +1728,7 @@ const contractAddressITEM = "0x7f295B288124E40C9CF39C332156213acc9a3C8b";
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.giveALLoutfit(inputAddress);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -1744,7 +1774,7 @@ const contractAddressITEM = "0x7f295B288124E40C9CF39C332156213acc9a3C8b";
 		  // Send the transaction calling the getbetapet function
 		  const tx = await contract.giveALLheadgear(inputAddress);
 		  console.log('Transaction sent:', tx);
-		  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+		  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
 	  
 		  // Wait for the transaction to be mined
 		  const receipt = await tx.wait();
@@ -1790,7 +1820,7 @@ const contractAddressITEM = "0x7f295B288124E40C9CF39C332156213acc9a3C8b";
 		  // Send the transaction calling the getbetapet function
 		  const tx = await contract.giveALLaerobot(inputAddress);
 		  console.log('Transaction sent:', tx);
-		  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+		  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
 	  
 		  // Wait for the transaction to be mined
 		  const receipt = await tx.wait();
@@ -1841,7 +1871,7 @@ const contractAddressITEM = "0x7f295B288124E40C9CF39C332156213acc9a3C8b";
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.giveONEitem(inputAddress,itemid);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -1893,7 +1923,7 @@ const contractAddressITEM = "0x7f295B288124E40C9CF39C332156213acc9a3C8b";
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.removeONEitem(inputAddress,itemid);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -1944,7 +1974,7 @@ const contractAddressITEM = "0x7f295B288124E40C9CF39C332156213acc9a3C8b";
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.setPoint1Credit(inputAddress,point);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -1997,7 +2027,7 @@ const contractAddressITEM = "0x7f295B288124E40C9CF39C332156213acc9a3C8b";
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.setPoint2Genemap(inputAddress,point);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -2452,7 +2482,7 @@ const contractAddressEVENT = "0x34e577214E1Fb186e12344C2Fdba79D8AB2d39c0";
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.removeONEitem(inputAddress,itemid);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
@@ -2499,7 +2529,7 @@ const contractAddressEVENT = "0x34e577214E1Fb186e12344C2Fdba79D8AB2d39c0";
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.giveALLeventsITEM(inputAddress);
 	  console.log('Transaction sent:', tx);
-	  feedbackBox.value = 'Transaction sent: ' + tx.hash;
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
 	  // Wait for the transaction to be mined
 	  const receipt = await tx.wait();
