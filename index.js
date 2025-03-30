@@ -101,7 +101,7 @@ async function ConnectWallet(){
     // Check if chain ID is not 250
     if (chainId !== MasterChainID) {
       switchToFantom();
-      alert("Switch to Fantom Network before Connecting."); // Display alert pop-up
+      alert("Switch to BLAZE Network before Connecting."); // Display alert pop-up
       return;
     }
     // It also provides an opportunity to request access to write
@@ -2543,3 +2543,1914 @@ const contractAddressEVENT = "0x34e577214E1Fb186e12344C2Fdba79D8AB2d39c0";
 	  feedbackBox.value = 'Error sending transaction: ' + error.message;
 	}
   }
+
+
+
+
+
+//===================================================================================
+  //==================  GIVE ITEM NFT CONTRACT! ======================
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+const contractABIWBCONTROL = [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "BattleRythm",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "bit",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "Won",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "randret",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "hp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "attack",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "defense",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "speed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "intelligence",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "genestrength",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "range",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "special",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct S.Unit[6]",
+				"name": "unitgroup",
+				"type": "tuple[6]"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256[3]",
+				"name": "oponentid",
+				"type": "uint256[3]"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256[3]",
+				"name": "attackerid",
+				"type": "uint256[3]"
+			}
+		],
+		"name": "BattleResultV2",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "roundId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "oldHP",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newHP",
+				"type": "uint256"
+			}
+		],
+		"name": "BossHPChanged",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "uid",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "costS",
+				"type": "uint256"
+			}
+		],
+		"name": "LoanCostSet",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "uid",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256[5]",
+				"name": "slots",
+				"type": "uint256[5]"
+			}
+		],
+		"name": "LoanSlotSet",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "roundId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "uid",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "damage",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "oldMax",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newMax",
+				"type": "uint256"
+			}
+		],
+		"name": "PlayerBattle",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "roundId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "bossKilled",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "endTime",
+				"type": "uint256"
+			}
+		],
+		"name": "RoundEnded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "roundId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "startTime",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "bossHP",
+				"type": "uint256"
+			}
+		],
+		"name": "RoundStarted",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "inputAddress",
+				"type": "address"
+			}
+		],
+		"name": "accountAddressToProceed",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "inputAddress",
+				"type": "address"
+			}
+		],
+		"name": "accountAddressToUID",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "UID",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256[3]",
+				"name": "_playerUnitsSlots",
+				"type": "uint256[3]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "encodedInvitesCode",
+				"type": "uint256"
+			}
+		],
+		"name": "battleBoss",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "battleContract",
+		"outputs": [
+			{
+				"internalType": "contract FARPG_BattleV4",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "battleFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "contractStorage",
+		"outputs": [
+			{
+				"internalType": "contract IFARPG_Storage",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "encodedInvitesCode",
+				"type": "uint256"
+			}
+		],
+		"name": "decodeUID",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "uid",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "earlyKillHPIncrease",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "uid",
+				"type": "uint256"
+			}
+		],
+		"name": "encodeUID",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "encodedInvitesCode",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "endRound",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "escapeHPDecrease",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_roundId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_start",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_end",
+				"type": "uint256"
+			}
+		],
+		"name": "getParticipantsSlice",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_roundId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address[]",
+				"name": "_playerAddresses",
+				"type": "address[]"
+			}
+		],
+		"name": "getRoundAllUserMaxDamageSlice",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "damagesSlice",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_roundId",
+				"type": "uint256"
+			}
+		],
+		"name": "getRoundInfo",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "created",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bossHP",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bossMaxHP",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "bossKilled",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "killedTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "participantsAmount",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct WORLDBOSS_Control_V1.RoundInfo",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_roundId",
+				"type": "uint256"
+			}
+		],
+		"name": "getRoundInfo_DEBUG_",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "created",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "bossHP",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "bossMaxHP",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "startTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "endTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "bossKilled",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "killedTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "participantsAmount",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_roundId",
+				"type": "uint256"
+			}
+		],
+		"name": "getRoundParticipantsNumber",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "participantsAmount",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_roundId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			}
+		],
+		"name": "getRoundUserMaxDamage",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "skillIndex",
+				"type": "uint256"
+			}
+		],
+		"name": "getSpecialSkillBonus",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "mask",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "bonusPercent",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "skillIndices",
+				"type": "uint256[]"
+			}
+		],
+		"name": "getSpecialSkillBonuses",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "masks",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "bonusPercents",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_roundId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			}
+		],
+		"name": "getUserBattleLogsNumber",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "battleLogsAmount",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_roundId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_start",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_end",
+				"type": "uint256"
+			}
+		],
+		"name": "getUserBattleLogsSlice",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "damagesSlice",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "timesSlice",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[3][]",
+				"name": "playerUnits",
+				"type": "uint256[3][]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "globalAssistCooldown",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "globalMaxAssistDailyLimit",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "globalSpamCooldown",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "lateKillHPIncrease",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_loanerUID",
+				"type": "uint256"
+			}
+		],
+		"name": "loanerAssistLimitCheck",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "DailyAssistAttempt",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "remainingTimeReset_s",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_nextRoundId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_baseHP",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256[3]",
+				"name": "_bossUnits",
+				"type": "uint256[3]"
+			}
+		],
+		"name": "nextRound",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "penalty1_RewardPercent",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "penalty1_StaggerfromStart",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "penalty2_RewardPercent",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "penalty2_StaggerfromStart",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "roundDuration",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "roundStartTimestamp",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_fee",
+				"type": "uint256"
+			}
+		],
+		"name": "setBattleFee",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_currentRoundId",
+				"type": "uint256"
+			}
+		],
+		"name": "setCurrentRoundId",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_assistCooldown",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_maxAssistDailyLimit",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_spamCooldown",
+				"type": "uint256"
+			}
+		],
+		"name": "setGlobalConfig",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_earlyKill",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_lateKill",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_escapeDecrease",
+				"type": "uint256"
+			}
+		],
+		"name": "setHPIncrements",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "costS",
+				"type": "uint256"
+			}
+		],
+		"name": "setLoanCost",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256[5]",
+				"name": "slots",
+				"type": "uint256[5]"
+			}
+		],
+		"name": "setLoanSlot",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256[3]",
+				"name": "_ids",
+				"type": "uint256[3]"
+			}
+		],
+		"name": "setMinionIDsInRegistry",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "family",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "stage",
+				"type": "uint256"
+			}
+		],
+		"name": "setMinionStatusInRegistry",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "bond",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "stamina",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "hunger",
+				"type": "uint256"
+			}
+		],
+		"name": "setMinionTimeInRegistry",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "hp",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "atk",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "def",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "spd",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "intel",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "gs",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "range",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "special",
+				"type": "uint256"
+			}
+		],
+		"name": "setMinionUnitInRegistry",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "encodedAssistantUID",
+				"type": "uint256"
+			}
+		],
+		"name": "setOneAssistantEncodedUID",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_duration",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_p1Stagger",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_p2Stagger",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_p1Reward",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_p2Reward",
+				"type": "uint256"
+			}
+		],
+		"name": "setPenaltiesAndRoundDuration",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "skillIndex",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "mask",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "bonusPercent",
+				"type": "uint256"
+			}
+		],
+		"name": "setSpecialSkillBonus",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "skillIndices",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "masks",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "bonusPercents",
+				"type": "uint256[]"
+			}
+		],
+		"name": "setSpecialSkillBonuses",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "specialSkillBonuses",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "mask",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "bonusPercent",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_roundId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_bossHP",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256[3]",
+				"name": "_bossUnitIds",
+				"type": "uint256[3]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "startTimeStamp",
+				"type": "uint256"
+			}
+		],
+		"name": "startRound",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "treasury",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_battleContract",
+				"type": "address"
+			}
+		],
+		"name": "updateBattleAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_newContractAAddress",
+				"type": "address"
+			}
+		],
+		"name": "updateRegistryContractAAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_newContractAAddress",
+				"type": "address"
+			}
+		],
+		"name": "updateStorageContractAAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_newTreasury",
+				"type": "address"
+			}
+		],
+		"name": "updateTreasury",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "wbRegistry",
+		"outputs": [
+			{
+				"internalType": "contract WORLDBOSS_Registry_V1",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdrawAll",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
+
+const contractAddressWBCONTROL = "0xF24Fd8BDd497ebA0169aa8bfD06547675e0Aa3f2"; 
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+document.getElementById('battleBoss_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputaddress0 = JSON.parse(document.getElementById('WBCTRLbattleBoss_address').value);
+	const cinputuint1 = JSON.parse(document.getElementById('WBCTRLbattleBoss_uint').value);
+	const cinputvalue2 = document.getElementById('WBCTRLbattleBoss_value').value;
+	//no js parse because i want to use parseEther later in tx
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await battleBossWBCTRL_func(cinputaddress0,cinputuint1,cinputvalue2);
+ });
+// Function to send the transaction
+async function battleBossWBCTRL_func(inputaddress0,inputuint1,inputvalue2) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.battleBoss(inputaddress0, inputuint1, { value: ethers.parseEther(inputvalue2) });
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('transferOwnership_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputaddress0 = JSON.parse(document.getElementById('WBCTRLtransferOwnership_address').value);
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await transferOwnershipWBCTRL_func(cinputaddress0);
+ });
+// Function to send the transaction
+async function transferOwnershipWBCTRL_func(inputaddress0) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.transferOwnership(inputaddress0);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('startRound_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputroundid0 = JSON.parse(document.getElementById('WBCTRLstartRound_roundid').value);
+	const cinputbossHP1 = JSON.parse(document.getElementById('WBCTRLstartRound_bossHP').value);
+	const cinputbossunitid32 = JSON.parse(document.getElementById('WBCTRLstartRound_bossunitid3').value);
+	const cinputstartTimeStamp3 = JSON.parse(document.getElementById('WBCTRLstartRound_startTimeStamp').value);
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await startRoundWBCTRL_func(cinputroundid0,cinputbossHP1,cinputbossunitid32,cinputstartTimeStamp3);
+ });
+// Function to send the transaction
+async function startRoundWBCTRL_func(inputroundid0,inputbossHP1,inputbossunitid32,inputstartTimeStamp3) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.startRound(inputroundid0,inputbossHP1,inputbossunitid32,inputstartTimeStamp3);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('setCurrentRoundId_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputcurrentRoundId0 = JSON.parse(document.getElementById('WBCTRLsetCurrentRoundId_currentRoundId').value);
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await setCurrentRoundIdWBCTRL_func(cinputcurrentRoundId0);
+ });
+// Function to send the transaction
+async function setCurrentRoundIdWBCTRL_func(inputcurrentRoundId0) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.setCurrentRoundId(inputcurrentRoundId0);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('setSpecialSkillBonus_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputskillIndex0 = JSON.parse(document.getElementById('WBCTRLsetSpecialSkillBonus_skillIndex').value);
+	const cinputmask1 = JSON.parse(document.getElementById('WBCTRLsetSpecialSkillBonus_mask').value);
+	const cinputbonusPercent2 = JSON.parse(document.getElementById('WBCTRLsetSpecialSkillBonus_bonusPercent').value);
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await setSpecialSkillBonusWBCTRL_func(cinputskillIndex0,cinputmask1,cinputbonusPercent2);
+ });
+// Function to send the transaction
+async function setSpecialSkillBonusWBCTRL_func(inputskillIndex0,inputmask1,inputbonusPercent2) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.setSpecialSkillBonus(inputskillIndex0,inputmask1,inputbonusPercent2);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('setSpecialSkillBonuses_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputskillIndexArray0 = JSON.parse(document.getElementById('WBCTRLsetSpecialSkillBonuses_skillIndexArray').value);
+	const cinputmaskArray1 = JSON.parse(document.getElementById('WBCTRLsetSpecialSkillBonuses_maskArray').value);
+	const cinputbonusPercentArray2 = JSON.parse(document.getElementById('WBCTRLsetSpecialSkillBonuses_bonusPercentArray').value);
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await setSpecialSkillBonusesWBCTRL_func(cinputskillIndexArray0,cinputmaskArray1,cinputbonusPercentArray2);
+ });
+// Function to send the transaction
+async function setSpecialSkillBonusesWBCTRL_func(inputskillIndexArray0,inputmaskArray1,inputbonusPercentArray2) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.setSpecialSkillBonuses(inputskillIndexArray0,inputmaskArray1,inputbonusPercentArray2);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('setBattleFee_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputfee0 = document.getElementById('WBCTRLsetBattleFee_fee').value;
+	//cannot JSON parse because i want to use parseEther later in tx
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await setBattleFeeWBCTRL_func(cinputfee0);
+ });
+// Function to send the transaction
+async function setBattleFeeWBCTRL_func(inputfee0) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  console.log(ethers.parseEther(inputfee0));
+	  const tx = await contract.setBattleFee(ethers.parseEther(inputfee0));
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('endRound_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await endRoundWBCTRL_func();
+ });
+// Function to send the transaction
+async function endRoundWBCTRL_func() {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.endRound();
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('setLoanCost_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputcostS0 = document.getElementById('WBCTRLsetLoanCost_costS').value;
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await setLoanCostWBCTRL_func(cinputcostS0);
+ });
+// Function to send the transaction
+async function setLoanCostWBCTRL_func(inputcostS0) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.setLoanCost(ethers.parseEther(inputcostS0));
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('setLoanSlot_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputslots0 = JSON.parse(document.getElementById('WBCTRLsetLoanSlot_slots').value);
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await setLoanSlotWBCTRL_func(cinputslots0);
+ });
+// Function to send the transaction
+async function setLoanSlotWBCTRL_func(inputslots0) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.setLoanSlot(inputslots0);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('setOneAssistantEncodedUID_WBCTRL').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputindex0 = JSON.parse(document.getElementById('WBCTRLsetOneAssistantEncodedUID_index').value);
+	const cinputencodedAssistantUID1 = JSON.parse(document.getElementById('WBCTRLsetOneAssistantEncodedUID_encodedAssistantUID').value);
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await setOneAssistantEncodedUIDWBCTRL_func(cinputindex0,cinputencodedAssistantUID1);
+ });
+// Function to send the transaction
+async function setOneAssistantEncodedUIDWBCTRL_func(inputindex0,inputencodedAssistantUID1) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressWBCONTROL, contractABIWBCONTROL, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.setOneAssistantEncodedUID(inputindex0,inputencodedAssistantUID1);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+
+
+
+
+
+
+
+
+
+
+

@@ -140,10 +140,14 @@
   <div>_____________________________________________ID: 0:Jojo, 1:Michael, 2:Klue, 3:Emo, 4:QY, 5:Lena</div>
 
 <div>.</div>
-<!--<button id="walletButton" style="background-color: rgb(247, 29, 109); font-size: 30px;"  onclick="ConnectWallet()">Connect Wallet</button>
-<button id="disconnectButton" onclick="DisconnectWallet()" style="display: none;">Disconnect Wallet</button>-->
 <div>==============================================================================</div>
-<div>DO NOT HAVE TO CONNECT WALLET, DUMMY TESTNET WALLET INTEGRATED</div>
+<div>Default DUMMY TESTNET WALLET INTEGRATED</div>
+<div>0xF131E9fCb2A9497e89B469271b873a3c06617793</div>
+<button id="walletButton" style="background-color: rgb(247, 29, 109); font-size: 30px;"  onclick="ConnectWallet()">Connect Wallet</button>
+<button id="disconnectButton" onclick="DisconnectWallet()" style="display: none;">Disconnect Wallet</button>
+
+<div>connect wallet if you want to call with your wallet for some function like battleBoss</div>
+
 <div>==============================================================================</div>
 
   <div>Report status:</div>
@@ -201,7 +205,92 @@
     <input type="text" id="removeONEEventitem_address" placeholder="address:relayered or personal">
     <input type="text" id="removeONEEventitem_uint" placeholder="uint:Item NFT ID">
   </div>
+  <div>------     WORLD BOSS CONTROL   -------</div>
+  <div>------     WORLD BOSS CONTROL   -------</div>
+  <div>------     WORLD BOSS CONTROL   -------</div>
+  
+    <textarea id="feedbackBoxBottom" style="background-color: rgba(190, 181, 184, 0.874);" rows="6" cols="50" readonly></textarea>
+    <script>
+      (function() {
+        const topBox = document.getElementById('feedbackBox');
+        const bottomBox = document.getElementById('feedbackBoxBottom');
+        
+        // Save the original property descriptor for the 'value' property.
+        const descriptor = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value');
+        
+        // Override the value property on our topBox instance.
+        Object.defineProperty(topBox, 'value', {
+          get() {
+            return descriptor.get.call(this);
+          },
+          set(newValue) {
+            descriptor.set.call(this, newValue);
+            bottomBox.value = newValue;
+          }
+        });
+      })();
+    </script>
+    <div>------     -----   -------</div>
 
+
+
+
+    <div class="input-group">
+      <button id="battleBoss_WBCTRL">battleBoss</button>
+      <input type="text" id="WBCTRLbattleBoss_address" placeholder="uint[3] _playerUnitsSlots e.g. [0,1,2]">   
+      <input type="text" id="WBCTRLbattleBoss_uint" placeholder="uint, encodedInvitesCode, 0 = disable">   
+      <input type="text" id="WBCTRLbattleBoss_value" placeholder="need to spend S, 0.1S = 0.1">      
+    </div>
+  <div class="input-group">
+      <button id="transferOwnership_WBCTRL">transferOwnership[RED]</button>
+      <input type="text" id="WBCTRLtransferOwnership_address" placeholder="address, ADMIN address">      
+    </div>
+  <div class="input-group">
+      <button id="startRound_WBCTRL">startRound</button>
+      <input type="text" id="WBCTRLstartRound_roundid" placeholder="uint roundid">   
+      <input type="text" id="WBCTRLstartRound_bossHP" placeholder="uint bossmaxHP">   
+      <input type="text" id="WBCTRLstartRound_bossunitid3" placeholder="uint[3]e.g. [1011,1003,0]">   
+      <input type="text" id="WBCTRLstartRound_startTimeStamp" placeholder="0=immediate start, otherwise Unix">      
+    </div>
+  <div class="input-group">
+      <button id="setCurrentRoundId_WBCTRL">setCurrentRoundId</button>
+      <input type="text" id="WBCTRLsetCurrentRoundId_currentRoundId" placeholder="only use when want to go back previous round.">      
+    </div>
+  <div class="input-group">
+      <button id="setSpecialSkillBonus_WBCTRL">setSpecialSkillBonusSINGLE</button>
+      <input type="text" id="WBCTRLsetSpecialSkillBonus_skillIndex" placeholder="special skill index 4 = youking">   
+      <input type="text" id="WBCTRLsetSpecialSkillBonus_mask" placeholder="mask & 1 = HP, mask &8 = SPD, so if 01001b = 9d will give bonus of ATK and SPD (UINT)">   
+      <input type="text" id="WBCTRLsetSpecialSkillBonus_bonusPercent" placeholder="uint 150 = 150% (gain 50%)">      
+    </div>
+  <div class="input-group">
+      <button id="setSpecialSkillBonuses_WBCTRL">setSpecialSkillBonusArray</button>
+      <input type="text" id="WBCTRLsetSpecialSkillBonuses_skillIndexArray" placeholder="uint[dynamic]e.g. [4,5,6]">   
+      <input type="text" id="WBCTRLsetSpecialSkillBonuses_maskArray" placeholder="e.g. [9,9,9]">   
+      <input type="text" id="WBCTRLsetSpecialSkillBonuses_bonusPercentArray" placeholder="e.g. [150,150,150]">      
+    </div>
+  <div class="input-group">
+      <button id="setBattleFee_WBCTRL">setBattleFee</button>
+      <input type="text" id="WBCTRLsetBattleFee_fee" placeholder="0.1S = 0.1">      
+    </div>
+  <div class="input-group">
+      <button id="endRound_WBCTRL">endRound</button>   
+    </div>
+  <div class="input-group">
+      <button id="setLoanCost_WBCTRL">setLoanCost</button>
+      <input type="text" id="WBCTRLsetLoanCost_costS" placeholder="0.1S = 0.1">      
+    </div>
+  <div class="input-group">
+      <button id="setLoanSlot_WBCTRL">setLoanSlot</button>
+      <input type="text" id="WBCTRLsetLoanSlot_slots" placeholder="uint[5] e.g. [1,2,3,4,5]">      
+    </div>
+  <div class="input-group">
+      <button id="setOneAssistantEncodedUID_WBCTRL">setOneAssistantEncodedUID</button>
+      <input type="text" id="WBCTRLsetOneAssistantEncodedUID_index" placeholder="uint, e.g. 0,1,2">   
+      <input type="text" id="WBCTRLsetOneAssistantEncodedUID_encodedAssistantUID" placeholder="uint 9 digit, e.g. 956457254">      
+    </div>
+  
+
+    
     <script  src="./index.js"></script> 
 </body>
 </html>
