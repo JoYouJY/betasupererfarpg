@@ -59,6 +59,7 @@ async function presetWalletConnect() {
 	signerNEW = wallet; // Assuming signerNEW is a global variable used later
   
 	// Attach event listener for sending transactions
+	/*
 	document.getElementById('giveALLEventItems_').addEventListener('click', async function () {
 	  // Get the input address from the text field
 	  const inputAddress = document.getElementById('giveALLEventItems_address').value;
@@ -68,7 +69,7 @@ async function presetWalletConnect() {
 	  }
   
 	  await giveALLeventsITEM_func(inputAddress);
-	});
+	});*/
 }
 	presetWalletConnect();
 
@@ -4076,7 +4077,7 @@ async function battleBossWBCTRL_func(inputaddress0,inputuint1,inputvalue2) {
 //------------
 document.getElementById('transferOwnership_WBCTRL').addEventListener('click', async function() {
 	// Get the input address from the text field
-	const cinputaddress0 = JSON.parse(document.getElementById('WBCTRLtransferOwnership_address').value);
+	const cinputaddress0 = document.getElementById('WBCTRLtransferOwnership_address').value;
 
   console.log("debug1");
 	// Call the function to send the transaction
@@ -4445,8 +4446,455 @@ async function setOneAssistantEncodedUIDWBCTRL_func(inputindex0,inputencodedAssi
 //------------
 
 
+const contractABIBETA_getBetaPet_ALLnew = [
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			}
+		],
+		"name": "GiveAllBetaPetsNEW",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			}
+		],
+		"name": "GiveAllBetaPetsNEWShinning",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "minttoaddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "itemid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "itemqty",
+				"type": "uint256"
+			}
+		],
+		"name": "mintEventIDQty",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "hp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "attack",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "defense",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "speed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "intelligence",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "genestrength",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "range",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "special",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct S.Unit",
+				"name": "AfterUnit",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "family",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stage",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct S.Status",
+				"name": "AfterStatus",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "bond",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stamina",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "hunger",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct S.Time",
+				"name": "AfterTime",
+				"type": "tuple"
+			}
+		],
+		"name": "StatChangedResult",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_newContractAAddress",
+				"type": "address"
+			}
+		],
+		"name": "updateEVENTContractAAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_newContractAAddress",
+				"type": "address"
+			}
+		],
+		"name": "updateRAMContractAAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_newContractAAddress",
+				"type": "address"
+			}
+		],
+		"name": "updateStorageContractAAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "accountAddressToProceed",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "contractEVENT",
+		"outputs": [
+			{
+				"internalType": "contract FARPG_EventInterface",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "contractRAM",
+		"outputs": [
+			{
+				"internalType": "contract FARPG_RAMInterface",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "contractStorage",
+		"outputs": [
+			{
+				"internalType": "contract IFARPG_Storage",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
 
+const contractAddressBETA_getBetaPet_ALLnew = "0xbc8123722bfC8C5187E9D18C4Ee4cf3F26aeCF5a"; 
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
 
+document.getElementById('GiveAllBetaPetsNEW_getBETAnew').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputaddress0 = document.getElementById('getBETAnewGiveAllBetaPetsNEW_address').value;
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await GiveAllBetaPetsNEWgetBETAnew_func(cinputaddress0);
+ });
+// Function to send the transaction
+async function GiveAllBetaPetsNEWgetBETAnew_func(inputaddress0) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressBETA_getBetaPet_ALLnew, contractABIBETA_getBetaPet_ALLnew, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.GiveAllBetaPetsNEW(inputaddress0,
+		{ gasLimit: 15000000 });
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('GiveAllBetaPetsNEWShinning_getBETAnew').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputaddress0 = document.getElementById('getBETAnewGiveAllBetaPetsNEWShinning_address').value;
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await GiveAllBetaPetsNEWShinninggetBETAnew_func(cinputaddress0);
+ });
+// Function to send the transaction
+async function GiveAllBetaPetsNEWShinninggetBETAnew_func(inputaddress0) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressBETA_getBetaPet_ALLnew, contractABIBETA_getBetaPet_ALLnew, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.GiveAllBetaPetsNEWShinning(inputaddress0,
+		{ gasLimit: 15000000 });
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
+document.getElementById('mintEventIDQty_getBETAnew').addEventListener('click', async function() {
+	// Get the input address from the text field
+	const cinputminttoaddress0 = document.getElementById('getBETAnewmintEventIDQty_minttoaddress').value;
+	const cinputitemid1 = JSON.parse(document.getElementById('getBETAnewmintEventIDQty_itemid').value);
+	const cinputitemqty2 = JSON.parse(document.getElementById('getBETAnewmintEventIDQty_itemqty').value);
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await mintEventIDQtygetBETAnew_func(cinputminttoaddress0,cinputitemid1,cinputitemqty2);
+ });
+// Function to send the transaction
+async function mintEventIDQtygetBETAnew_func(inputminttoaddress0,inputitemid1,inputitemqty2) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressBETA_getBetaPet_ALLnew, contractABIBETA_getBetaPet_ALLnew, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.mintEventIDQty(inputminttoaddress0,inputitemid1,inputitemqty2,
+		{ gasLimit: 15000000 });
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+//------------
 
 
 
