@@ -4754,7 +4754,7 @@ const contractABIBETA_getBetaPet_ALLnew = [
 	}
 ]
 
-const contractAddressBETA_getBetaPet_ALLnew = "0xbc8123722bfC8C5187E9D18C4Ee4cf3F26aeCF5a"; 
+const contractAddressBETA_getBetaPet_ALLnew = "0x2C6Af6D6bc233f0F3C3e749Db59df7d0a84A58C2"; 
 //**********IMPORTANT************** */
 //**********IMPORTANT************** */
 //**********IMPORTANT************** */
