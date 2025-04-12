@@ -4839,7 +4839,7 @@ async function GiveAllBetaPetsNEWShinninggetBETAnew_func(inputaddress0) {
   
 	  // Send the transaction calling the getbetapet function
 	  const tx = await contract.GiveAllBetaPetsNEWShinning(inputaddress0,
-		{ gasLimit: 15000000 });
+		{ gasLimit: 25000000 });
 	  console.log('Transaction sent:', tx);
 	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
