@@ -4009,7 +4009,7 @@ const contractABIWBCONTROL = [
 	}
 ];
 
-const contractAddressWBCONTROL = "0xA346974ad9C2E8cf7A87ED377285dEEAD0a6329f"; 
+const contractAddressWBCONTROL = "0x6ec51a59Ab5EDd58DAE7fBE82A05cC3450019C8D"; 
 //**********IMPORTANT************** */
 //**********IMPORTANT************** */
 //**********IMPORTANT************** */
