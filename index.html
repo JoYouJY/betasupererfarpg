@@ -306,9 +306,21 @@
         <input type="text" id="getBETAnewmintEventIDQty_itemid" placeholder="ID 0 = SHARD, ID9 = Gem">   
         <input type="text" id="getBETAnewmintEventIDQty_itemqty" placeholder="uint, e.g.  5000">      
       </div>
+      <div>------     give REWARD  -------</div>
+      <div class="input-group">
+        <button id="giveReward_VaultCTRLzz">giveReward</button>
+        <input type="text" id="giveReward_Vault_playerAddressArray" placeholder="address [&quot;0x123..EAB&quot;, &quot;0x123..567&quot;]">   
+        <input type="text" id="giveReward_Vault_rewardTypes" placeholder="refer GDD, [3,4] 3=gem, 4=LingsMemoryFragment, etc ">   
+        <input type="text" id="giveReward_Vault_rewardQuantities" placeholder="quantity of reward, e.g. [100,200]">      
+        <input type="text" id="giveReward_Vault_timeBeforeExpired" placeholder="seconds, 60 = expired in 60s">    
+        <input type="text" id="giveReward_Vault_timeBeforeVested" placeholder="vested, default 0 = vested immeadiately">    
+        <input type="text" id="giveReward_Vault_rewardMessageID" placeholder="refer GDD, uint, = Unity show text">    
+        <div>------   address is dynamic array, usually only give to 1 address, so input as ["0x123...456"] -------</div>
+        <div>------   rewardtypes and quantity also dynamic array, but it means each address get what reward, can be 2~3 reward types on each Address.   -------</div>
+        <div>------  -------</div>
+      </div>
   
 
-    
     <script  src="./index.js"></script> 
 </body>
 </html>
