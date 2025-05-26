@@ -6198,7 +6198,7 @@ const contractABIVault = [
 	}
 ]
 
-const contractAddressVault = "0xF001bf51E4E81599cFCb65215c597b8382042D44"; 
+const contractAddressVault = "0x14375bD8e2A3c29A2009AB7e2552Da26EE42DA7f"; 
 //**********IMPORTANT************** */
 //**********IMPORTANT************** */
 //**********IMPORTANT************** */
