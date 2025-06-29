@@ -318,7 +318,22 @@
         <div>------   address is dynamic array, usually only give to 1 address, so input as ["0x123...456"] -------</div>
         <div>------   rewardtypes and quantity also dynamic array, but it means each address get what reward, can be 2~3 reward types on each Address.   -------</div>
         <div>------   use DUMMY TESTNET WALLET INTEGRATED 0xF131E9fCb2A9497e89B469271b873a3c06617793 (dont connect personal wallet)-------</div>
-        <div>------  -------</div>
+        <div>------ CHANGE Phase1 Guild Wars time -------</div>
+        <div class="input-group">
+        <button id="setPhase1Time_CommandCTRLzz">setPhase1TimeGuildWar</button>
+        <input type="text" id="setPhase1Time_Command_uint" placeholder="1751200632 unix">  
+        <div>------ FA Token give -------</div>
+        <div class="input-group">
+        <button id="mint_FACTRLzz">give Token</button>
+        <input type="text" id="mint_FA_addressto" placeholder="address 0x1234...">  
+        <input type="text" id="mint_FA_uint" placeholder="amount Uint256, need 18 zeroes if want 1 token">  
+          <div></div>
+        <button id="increaseAllowance_FACTRLzz">allow contract use your token</button>
+        <input type="text" id="increaseAllowance_FA_addressto" placeholder="Spender contract address 0x1234...">  
+        <input type="text" id="increaseAllowance_FA_uint" placeholder="amount Uint256, need 18 zeroes if want 1 token">  
+        
+
+
       </div>
   
 

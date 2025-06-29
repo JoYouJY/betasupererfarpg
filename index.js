@@ -6276,7 +6276,1361 @@ async function giveReward_VaultCTRL_func(input1,input2,input3,input4,input5,inpu
 
 
 
+const contractABICommand = [
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "roundNumber",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "attackerUID",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "defenderUID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "attackerWon",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "reward",
+				"type": "uint256"
+			}
+		],
+		"name": "AttackRecorded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "playerUID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "numPasses",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "totalCost",
+				"type": "uint256"
+			}
+		],
+		"name": "BattlePassPurchased",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "captainUID",
+				"type": "uint256"
+			}
+		],
+		"name": "CaptainAppointed",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "captainUID",
+				"type": "uint256"
+			}
+		],
+		"name": "CaptainRemoved",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "leaderUID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "location",
+				"type": "uint256"
+			}
+		],
+		"name": "GuildCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			}
+		],
+		"name": "GuildDisbanded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "buyer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			}
+		],
+		"name": "GuildNFTPurchased",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "newName",
+				"type": "string"
+			}
+		],
+		"name": "GuildNameChanged",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "playerUID",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "approvedBy",
+				"type": "uint256"
+			}
+		],
+		"name": "JoinRequestApproved",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "playerUID",
+				"type": "uint256"
+			}
+		],
+		"name": "JoinRequestSent",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "memberUID",
+				"type": "uint256"
+			}
+		],
+		"name": "MemberJoined",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "memberUID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "wasExpelled",
+				"type": "bool"
+			}
+		],
+		"name": "MemberLeft",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "playerUID",
+				"type": "uint256"
+			}
+		],
+		"name": "PlayerRegisteredForWar",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "roundNumber",
+				"type": "uint256"
+			}
+		],
+		"name": "RoundConcluded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "roundNumber",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "startTime",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "endTime",
+				"type": "uint256"
+			}
+		],
+		"name": "RoundStarted",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "inputAddress",
+				"type": "address"
+			}
+		],
+		"name": "accountAddressToUID",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "UID",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_nextWarStartTime",
+				"type": "uint256"
+			}
+		],
+		"name": "adminSetPhase1Time",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "newCaptainUID",
+				"type": "uint256"
+			}
+		],
+		"name": "appointCaptain",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "playerToApproveUID",
+				"type": "uint256"
+			}
+		],
+		"name": "approveJoinRequest",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "contractHall",
+		"outputs": [
+			{
+				"internalType": "contract GUILDWARS_HALL_V1",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "location",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "nftTokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "createGuild",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			}
+		],
+		"name": "disbandGuild",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "expelUID",
+				"type": "uint256"
+			}
+		],
+		"name": "expelMember",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "faToken",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "uid",
+				"type": "uint256"
+			}
+		],
+		"name": "isGuildCaptain",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "uid",
+				"type": "uint256"
+			}
+		],
+		"name": "isGuildMember",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "uid",
+				"type": "uint256"
+			}
+		],
+		"name": "isLeader",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "uid",
+				"type": "uint256"
+			}
+		],
+		"name": "isLeaderOrCaptain",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "nftContract",
+		"outputs": [
+			{
+				"internalType": "contract IGuildLegacyNFT",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "purchaseGuildNFT",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			}
+		],
+		"name": "quitGuild",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "playerToRejectUID",
+				"type": "uint256"
+			}
+		],
+		"name": "rejectJoinRequest",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "captainToRemoveUID",
+				"type": "uint256"
+			}
+		],
+		"name": "removeCaptain",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			}
+		],
+		"name": "requestJoinGuild",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "newLocation",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "newEmblem",
+				"type": "uint256"
+			}
+		],
+		"name": "setGuildAppearance",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "guildId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "newName",
+				"type": "string"
+			}
+		],
+		"name": "setGuildName",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			}
+		],
+		"name": "updateFAToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			}
+		],
+		"name": "updateGuildNFTContract",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newHall",
+				"type": "address"
+			}
+		],
+		"name": "updateHallContract",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
+
+const contractAddressCommand = "0x558122B57869b9ff3a662F52E00047d1079d6649"; 
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+
+console.log("index.js loaded");
+
+document.getElementById('setPhase1Time_CommandCTRLzz').addEventListener('click', async function() {
+	// Get the input address from the text field
+	console.log("debug1");
+	const cinput1 = JSON.parse(document.getElementById('setPhase1Time_Command_uint').value);
 
 
+  console.log("debug1");
+	// Call the function to send the transaction
+	await setPhase1Time_Command_func(cinput1);
+ });
+
+
+ 
+// Function to send the transaction
+async function setPhase1Time_Command_func(input1) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressCommand, contractABICommand, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.adminSetPhase1Time(input1);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+
+
+
+
+const contractABIFA = [
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "initialSupply",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountInEther",
+				"type": "uint256"
+			}
+		],
+		"name": "cheatFreeToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "subtractedValue",
+				"type": "uint256"
+			}
+		],
+		"name": "decreaseAllowance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "addedValue",
+				"type": "uint256"
+			}
+		],
+		"name": "increaseAllowance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "mint",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			}
+		],
+		"name": "allowance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+
+const contractAddressFA = "0x40A03DBb73f473faE30C0D80192083c1681722F6"; 
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** *///**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+//**********IMPORTANT************** */
+
+console.log("index.js loaded"); //mint
+
+document.getElementById('mint_FACTRLzz').addEventListener('click', async function() {
+	// Get the input address from the text field
+	console.log("debug1");
+	const cinput1 = document.getElementById('mint_FA_addressto').value;
+	const cinput2 = JSON.parse(document.getElementById('mint_FA_uint').value);
+
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await mint_FA_func(cinput1,cinput2);
+ });
+
+
+ 
+// Function to send the transaction
+async function mint_FA_func(input1,input2) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressFA, contractABIFA, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.mint(input1,input2);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
+
+console.log("index.js loaded");//increase allowance
+
+document.getElementById('increaseAllowance_FACTRLzz').addEventListener('click', async function() {
+	// Get the input address from the text field
+	console.log("debug1");
+	const cinput1 = document.getElementById('increaseAllowance_FA_addressto').value;
+	const cinput2 = JSON.parse(document.getElementById('increaseAllowance_FA_uint').value);
+
+
+  console.log("debug1");
+	// Call the function to send the transaction
+	await increaseAllowance_FA_func(cinput1,cinput2);
+ });
+
+
+ 
+// Function to send the transaction
+async function increaseAllowance_FA_func(input1,input2) {
+	const feedbackBox = document.getElementById('feedbackBox');
+	console.log("debug2");
+	try {
+	  feedbackBox.value = 'Sending transaction...';
+	  console.log("debug3");
+	  // Initialize the contract
+	  const contract = new ethers.Contract(contractAddressFA, contractABIFA, signerNEW);
+  
+	  // Send the transaction calling the getbetapet function
+	  const tx = await contract.increaseAllowance(input1,input2);
+	  console.log('Transaction sent:', tx);
+	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
+  
+	  // Wait for the transaction to be mined
+	  const receipt = await tx.wait();
+	  console.log('Transaction confirmed:', receipt);
+  
+	   // Success message
+	   feedbackBox.value += '\nTransaction successful!';
+	  
+	} catch (error) {
+	  console.error('Error sending transaction:', error);
+	  feedbackBox.value = 'Error sending transaction: ' + error.message;
+	}
+ }
 
 
