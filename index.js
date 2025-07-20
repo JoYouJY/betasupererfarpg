@@ -7550,8 +7550,8 @@ console.log("index.js loaded"); //mint
 document.getElementById('mint_FACTRLzz').addEventListener('click', async function() {
 	// Get the input address from the text field
 	console.log("debug1");
-	const cinput1 = document.getElementById('mint_FA_addressto').value;
-	const cinput2 = JSON.parse(document.getElementById('mint_FA_uint').value);
+	const cinput1 = document.getElementById('mint_FA_addressto').value; 
+	const cinput2 = document.getElementById('mint_FA_uint').value;
 
 
   console.log("debug1");
@@ -7595,7 +7595,7 @@ document.getElementById('increaseAllowance_FACTRLzz').addEventListener('click', 
 	// Get the input address from the text field
 	console.log("debug1");
 	const cinput1 = document.getElementById('increaseAllowance_FA_addressto').value;
-	const cinput2 = JSON.parse(document.getElementById('increaseAllowance_FA_uint').value);
+	const cinput2 = document.getElementById('increaseAllowance_FA_uint').value;
 
 
   console.log("debug1");
