@@ -7616,7 +7616,7 @@ async function increaseAllowance_FA_func(input1,input2) {
 	  const contract = new ethers.Contract(contractAddressFA, contractABIFA, signerNEW);
   
 	  // Send the transaction calling the getbetapet function
-	  const tx = await contract.increaseAllowance(input1,input2);
+	  const tx = await contract.approve(input1,input2);
 	  console.log('Transaction sent:', tx);
 	  feedbackBox.value = 'Transaction sent: ' + tx.hash + '\nWaiting Receipt...';
   
