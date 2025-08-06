@@ -7071,7 +7071,7 @@ const contractABICommand = [
 	}
 ]
 
-const contractAddressCommand = "0x4979B00494D0d9ED1556b22f3A791750414fb783"; 
+const contractAddressCommand = "0x10CF8e3CA5Db24d3FE1C2922e45Cc97863422335"; 
 //**********IMPORTANT************** */
 //**********IMPORTANT************** */
 //**********IMPORTANT************** */
